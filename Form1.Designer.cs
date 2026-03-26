@@ -52,7 +52,7 @@
             butEqual = new Button();
             butPi = new Button();
             butLog = new Button();
-            label1 = new Label();
+            txtTitle = new TextBox();
             SuspendLayout();
             // 
             // txtInsert
@@ -339,23 +339,23 @@
             butLog.UseWaitCursor = true;
             butLog.Click += butLog_Click;
             // 
-            // label1
+            // txtTitle
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("맑은 고딕", 24F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label1.ForeColor = Color.RoyalBlue;
-            label1.Location = new Point(83, 39);
-            label1.Name = "label1";
-            label1.Size = new Size(544, 86);
-            label1.TabIndex = 26;
-            label1.Text = "Simple Calculator";
+            txtTitle.Font = new Font("맑은 고딕", 22.125F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            txtTitle.ForeColor = SystemColors.Highlight;
+            txtTitle.Location = new Point(81, 48);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(541, 86);
+            txtTitle.TabIndex = 26;
+            txtTitle.Text = "  Simple Caculator";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.매트릭스;
             ClientSize = new Size(778, 836);
-            Controls.Add(label1);
+            Controls.Add(txtTitle);
             Controls.Add(butLog);
             Controls.Add(butPi);
             Controls.Add(butEqual);
@@ -380,6 +380,7 @@
             Controls.Add(butCe);
             Controls.Add(txtRssult);
             Controls.Add(txtInsert);
+            ForeColor = SystemColors.ControlText;
             Name = "Form1";
             Text = "Calculator 1.0";
             UseWaitCursor = true;
@@ -414,6 +415,6 @@
         private Button butEqual;
         private Button butPi;
         private Button butLog;
-        private Label label1;
+        private TextBox txtTitle;
     }
 }

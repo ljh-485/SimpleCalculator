@@ -33,6 +33,9 @@ namespace SimpleCalculator
             currentOperand = string.Empty;
             txtInsert.Text = string.Empty;
             txtRssult.Text = string.Empty;
+            // reset title and focus to input to restore initial UI state
+            txtTitle.Text = "Simple Calculator";
+            txtInsert.Focus();
         }
 
 

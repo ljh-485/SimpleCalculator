@@ -60,6 +60,7 @@
             txtInsert.Name = "txtInsert";
             txtInsert.Size = new Size(487, 57);
             txtInsert.TabIndex = 0;
+            txtInsert.TextChanged += txtInsert_TextChanged;
             // 
             // txtRssult
             // 
@@ -68,6 +69,7 @@
             txtRssult.Name = "txtRssult";
             txtRssult.Size = new Size(487, 57);
             txtRssult.TabIndex = 1;
+            txtRssult.TextChanged += txtRssult_TextChanged;
             // 
             // butCe
             // 
@@ -78,6 +80,7 @@
             butCe.TabIndex = 2;
             butCe.Text = "CE";
             butCe.UseVisualStyleBackColor = true;
+            butCe.Click += butCe_Click;
             // 
             // butC
             // 
@@ -88,6 +91,7 @@
             butC.TabIndex = 3;
             butC.Text = "C";
             butC.UseVisualStyleBackColor = true;
+            butC.Click += butC_Click;
             // 
             // butDel
             // 
@@ -98,6 +102,7 @@
             butDel.TabIndex = 4;
             butDel.Text = "DEL";
             butDel.UseVisualStyleBackColor = true;
+            butDel.Click += butDel_Click;
             // 
             // butDivision
             // 
@@ -108,6 +113,7 @@
             butDivision.TabIndex = 5;
             butDivision.Text = "%";
             butDivision.UseVisualStyleBackColor = true;
+            butDivision.Click += OperatorButton_Click;
             // 
             // butSeven
             // 
@@ -118,6 +124,7 @@
             butSeven.TabIndex = 6;
             butSeven.Text = "7";
             butSeven.UseVisualStyleBackColor = true;
+            butSeven.Click += NumberButton_Click;
             // 
             // butEight
             // 
@@ -128,6 +135,7 @@
             butEight.TabIndex = 7;
             butEight.Text = "8";
             butEight.UseVisualStyleBackColor = true;
+            butEight.Click += NumberButton_Click;
             // 
             // butNine
             // 
@@ -138,6 +146,7 @@
             butNine.TabIndex = 8;
             butNine.Text = "9";
             butNine.UseVisualStyleBackColor = true;
+            butNine.Click += NumberButton_Click;
             // 
             // butMultip
             // 
@@ -148,6 +157,7 @@
             butMultip.TabIndex = 9;
             butMultip.Text = "x";
             butMultip.UseVisualStyleBackColor = true;
+            butMultip.Click += OperatorButton_Click;
             // 
             // butFour
             // 
@@ -158,6 +168,7 @@
             butFour.TabIndex = 10;
             butFour.Text = "4";
             butFour.UseVisualStyleBackColor = true;
+            butFour.Click += NumberButton_Click;
             // 
             // butFive
             // 
@@ -168,6 +179,7 @@
             butFive.TabIndex = 11;
             butFive.Text = "5";
             butFive.UseVisualStyleBackColor = true;
+            butFive.Click += NumberButton_Click;
             // 
             // butSix
             // 
@@ -178,6 +190,7 @@
             butSix.TabIndex = 12;
             butSix.Text = "6";
             butSix.UseVisualStyleBackColor = true;
+            butSix.Click += NumberButton_Click;
             // 
             // butMin
             // 
@@ -188,6 +201,7 @@
             butMin.TabIndex = 13;
             butMin.Text = "-";
             butMin.UseVisualStyleBackColor = true;
+            butMin.Click += OperatorButton_Click;
             // 
             // butOne
             // 
@@ -198,6 +212,7 @@
             butOne.TabIndex = 14;
             butOne.Text = "1";
             butOne.UseVisualStyleBackColor = true;
+            butOne.Click += NumberButton_Click;
             // 
             // butTwo
             // 
@@ -208,6 +223,7 @@
             butTwo.TabIndex = 15;
             butTwo.Text = "2";
             butTwo.UseVisualStyleBackColor = true;
+            butTwo.Click += NumberButton_Click;
             // 
             // butThree
             // 
@@ -218,6 +234,7 @@
             butThree.TabIndex = 16;
             butThree.Text = "3";
             butThree.UseVisualStyleBackColor = true;
+            butThree.Click += NumberButton_Click;
             // 
             // butPlus
             // 
@@ -228,6 +245,7 @@
             butPlus.TabIndex = 17;
             butPlus.Text = "+";
             butPlus.UseVisualStyleBackColor = true;
+            butPlus.Click += OperatorButton_Click;
             // 
             // butPlMi
             // 
@@ -238,6 +256,7 @@
             butPlMi.TabIndex = 18;
             butPlMi.Text = "+/-";
             butPlMi.UseVisualStyleBackColor = true;
+            butPlMi.Click += butPlMi_Click;
             // 
             // butZero
             // 
@@ -248,6 +267,7 @@
             butZero.TabIndex = 19;
             butZero.Text = "0";
             butZero.UseVisualStyleBackColor = true;
+            butZero.Click += NumberButton_Click;
             // 
             // butDot
             // 
@@ -258,6 +278,7 @@
             butDot.TabIndex = 20;
             butDot.Text = ".";
             butDot.UseVisualStyleBackColor = true;
+            butDot.Click += Dot_Click;
             // 
             // butEqual
             // 
@@ -268,6 +289,7 @@
             butEqual.TabIndex = 21;
             butEqual.Text = "=";
             butEqual.UseVisualStyleBackColor = true;
+            butEqual.Click += butEqual_Click;
             // 
             // txtTitle
             // 
@@ -307,7 +329,9 @@
             Controls.Add(txtRssult);
             Controls.Add(txtInsert);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Calculator 1.0";
+            UseWaitCursor = true;
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

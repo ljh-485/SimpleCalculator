@@ -23,6 +23,37 @@ namespace SimpleCalculator
         private void butCe_Click(object sender, EventArgs e)
         {
 
+            // CE: Clear last entered operand entirely
+            if (!string.IsNullOrEmpty(currentOperand))
+            {
+                if (expression.Length >= currentOperand.Length)
+                {
+                    expression = expression.Substring(0, expression.Length - currentOperand.Length);
+                }
+                currentOperand = string.Empty;
+                txtInsert.Text = expression;
+                txtRssult.Text = string.Empty;
+                return;
+            }
+
+            // if currentOperand is empty, remove the last operand in the expression
+            if (!string.IsNullOrEmpty(expression))
+            {
+                int i = expression.Length - 1;
+                // skip trailing operators if any
+                while (i >= 0 && "+-x%".Contains(expression[i])) i--;
+                // now i is at the end of the last operand (or -1)
+                int end = i;
+                // move to the start of that operand
+                while (i >= 0 && !"+-x%".Contains(expression[i])) i--;
+                int start = i + 1;
+                if (end >= start)
+                {
+                    expression = expression.Remove(start, end - start + 1);
+                }
+                txtInsert.Text = expression;
+                txtRssult.Text = string.Empty;
+            }
         }
 
 

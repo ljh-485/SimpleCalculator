@@ -316,7 +316,7 @@
             // txtTitle
             // 
             txtTitle.Font = new Font("맑은 고딕", 22.125F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            txtTitle.ForeColor = SystemColors.MenuHighlight;
+            txtTitle.ForeColor = Color.MidnightBlue;
             txtTitle.Location = new Point(110, 21);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(483, 86);

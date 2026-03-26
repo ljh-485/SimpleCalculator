@@ -116,7 +116,7 @@
             butDivision.Name = "butDivision";
             butDivision.Size = new Size(109, 68);
             butDivision.TabIndex = 5;
-            butDivision.Text = "/";
+            butDivision.Text = "÷";
             butDivision.UseVisualStyleBackColor = true;
             butDivision.UseWaitCursor = true;
             butDivision.Click += OperatorButton_Click;
@@ -164,7 +164,7 @@
             butMultip.Name = "butMultip";
             butMultip.Size = new Size(109, 68);
             butMultip.TabIndex = 9;
-            butMultip.Text = "*";
+            butMultip.Text = "×";
             butMultip.UseVisualStyleBackColor = true;
             butMultip.UseWaitCursor = true;
             butMultip.Click += OperatorButton_Click;

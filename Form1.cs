@@ -118,6 +118,53 @@ namespace SimpleCalculator
             txtRssult.Text = currentOperand;
         }
 
+        private void butLog_Click(object sender, EventArgs e)
+        {
+            // Calculate base-10 logarithm of the current operand or result
+            // If current operand exists, apply to it; otherwise try txtRssult
+            string target = null;
+            if (!string.IsNullOrEmpty(currentOperand)) target = currentOperand;
+            else if (!string.IsNullOrEmpty(txtRssult.Text)) target = txtRssult.Text;
+            if (string.IsNullOrEmpty(target)) return;
+
+            if (!double.TryParse(target, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out double value))
+            {
+                // try parsing with current culture fallback
+                if (!double.TryParse(target, out value))
+                {
+                    txtRssult.Text = "Error";
+                    return;
+                }
+            }
+
+            if (value <= 0)
+            {
+                txtRssult.Text = "Error";
+                return;
+            }
+
+            double logv = Math.Log10(value);
+            string s = logv.ToString(System.Globalization.CultureInfo.InvariantCulture);
+
+            // replace current operand in expression if present, else start new expression from result
+            if (!string.IsNullOrEmpty(currentOperand))
+            {
+                int start = expression.Length - currentOperand.Length;
+                currentOperand = s;
+                expression = expression.Substring(0, start) + currentOperand;
+                txtInsert.Text = expression;
+                txtRssult.Text = currentOperand;
+            }
+            else
+            {
+                // use log result as new starting operand
+                expression = s;
+                currentOperand = s;
+                txtInsert.Text = expression;
+                txtRssult.Text = currentOperand;
+            }
+        }
+
         private void Dot_Click(object sender, EventArgs e)
         {
             // prevent multiple dots in the current operand

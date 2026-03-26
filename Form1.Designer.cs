@@ -52,6 +52,7 @@
             butEqual = new Button();
             txtTitle = new TextBox();
             butPi = new Button();
+            butLog = new Button();
             SuspendLayout();
             // 
             // txtInsert
@@ -337,11 +338,36 @@
             butPi.UseWaitCursor = true;
             butPi.Click += butPi_Click;
             // 
+            // butLog
+            // 
+            butLog = new Button();
+            butLog.Font = new Font("맑은 고딕", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            butLog.Location = new Point(12, 529);
+            butLog.Name = "butLog";
+            butLog.Size = new Size(87, 68);
+            butLog.TabIndex = 24;
+            butLog.Text = "log";
+            butLog.UseVisualStyleBackColor = true;
+            butLog.UseWaitCursor = true;
+            butLog.Click += butLog_Click;
+            // 
+            // butLog
+            // 
+            butLog.Font = new Font("맑은 고딕", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            butLog.Location = new Point(13, 529);
+            butLog.Name = "butLog";
+            butLog.Size = new Size(87, 68);
+            butLog.TabIndex = 25;
+            butLog.Text = "log";
+            butLog.UseVisualStyleBackColor = true;
+            butLog.UseWaitCursor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(778, 836);
+            Controls.Add(butLog);
             Controls.Add(butPi);
             Controls.Add(txtTitle);
             Controls.Add(butEqual);
@@ -400,5 +426,6 @@
         private Button butEqual;
         private TextBox txtTitle;
         private Button butPi;
+        private Button butLog;
     }
 }

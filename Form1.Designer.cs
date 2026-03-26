@@ -51,6 +51,7 @@
             butDot = new Button();
             butEqual = new Button();
             txtTitle = new TextBox();
+            butPi = new Button();
             SuspendLayout();
             // 
             // txtInsert
@@ -324,11 +325,24 @@
             txtTitle.Text = "Simple Calculator";
             txtTitle.UseWaitCursor = true;
             // 
+            // butPi
+            // 
+            butPi.Font = new Font("맑은 고딕", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            butPi.Location = new Point(12, 434);
+            butPi.Name = "butPi";
+            butPi.Size = new Size(87, 68);
+            butPi.TabIndex = 23;
+            butPi.Text = "π";
+            butPi.UseVisualStyleBackColor = true;
+            butPi.UseWaitCursor = true;
+            butPi.Click += butPi_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(778, 836);
+            Controls.Add(butPi);
             Controls.Add(txtTitle);
             Controls.Add(butEqual);
             Controls.Add(butDot);
@@ -385,5 +399,6 @@
         private Button butDot;
         private Button butEqual;
         private TextBox txtTitle;
+        private Button butPi;
     }
 }

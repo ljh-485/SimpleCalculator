@@ -41,11 +41,11 @@ namespace SimpleCalculator
             {
                 int i = expression.Length - 1;
                 // skip trailing operators if any
-                while (i >= 0 && "+-x%".Contains(expression[i])) i--;
+                while (i >= 0 && "+-x%/÷".Contains(expression[i])) i--;
                 // now i is at the end of the last operand (or -1)
                 int end = i;
                 // move to the start of that operand
-                while (i >= 0 && !"+-x%".Contains(expression[i])) i--;
+                while (i >= 0 && !"+-x%/÷".Contains(expression[i])) i--;
                 int start = i + 1;
                 if (end >= start)
                 {
@@ -108,6 +108,16 @@ namespace SimpleCalculator
             }
         }
 
+        private void butPi_Click(object sender, EventArgs e)
+        {
+            // Insert PI rounded to 4 decimal places (3.1416)
+            string pi = Math.Round(Math.PI, 4).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            expression += pi;
+            currentOperand += pi;
+            txtInsert.Text = expression;
+            txtRssult.Text = currentOperand;
+        }
+
         private void Dot_Click(object sender, EventArgs e)
         {
             // prevent multiple dots in the current operand
@@ -138,7 +148,7 @@ namespace SimpleCalculator
                 if (!string.IsNullOrEmpty(expression))
                 {
                     char last = expression[expression.Length - 1];
-                    if ("+-x%".Contains(last))
+                    if ("+-x%/÷".Contains(last))
                     {
                         expression = expression.Substring(0, expression.Length - 1) + op;
                     }
@@ -159,8 +169,8 @@ namespace SimpleCalculator
             try
             {
                 if (string.IsNullOrEmpty(expression)) return;
-                // prepare expression for DataTable.Compute: replace 'x' with '*', '%' (designer used as division) -> '/'
-                string eval = expression.Replace("x", "*").Replace("%", "/");
+                // prepare expression for DataTable.Compute: replace 'x' with '*', '%' and '÷' to '/'
+                string eval = expression.Replace("x", "*").Replace("%", "/").Replace("÷", "/");
                 var dt = new System.Data.DataTable();
                 var val = dt.Compute(eval, string.Empty);
                 txtRssult.Text = val.ToString();

@@ -60,6 +60,7 @@
             txtInsert.Name = "txtInsert";
             txtInsert.Size = new Size(487, 57);
             txtInsert.TabIndex = 0;
+            txtInsert.UseWaitCursor = true;
             txtInsert.TextChanged += txtInsert_TextChanged;
             // 
             // txtRssult
@@ -69,6 +70,7 @@
             txtRssult.Name = "txtRssult";
             txtRssult.Size = new Size(487, 57);
             txtRssult.TabIndex = 1;
+            txtRssult.UseWaitCursor = true;
             txtRssult.TextChanged += txtRssult_TextChanged;
             // 
             // butCe
@@ -80,6 +82,7 @@
             butCe.TabIndex = 2;
             butCe.Text = "CE";
             butCe.UseVisualStyleBackColor = true;
+            butCe.UseWaitCursor = true;
             butCe.Click += butCe_Click;
             // 
             // butC
@@ -91,6 +94,7 @@
             butC.TabIndex = 3;
             butC.Text = "C";
             butC.UseVisualStyleBackColor = true;
+            butC.UseWaitCursor = true;
             butC.Click += butC_Click;
             // 
             // butDel
@@ -102,6 +106,7 @@
             butDel.TabIndex = 4;
             butDel.Text = "DEL";
             butDel.UseVisualStyleBackColor = true;
+            butDel.UseWaitCursor = true;
             butDel.Click += butDel_Click;
             // 
             // butDivision
@@ -111,8 +116,9 @@
             butDivision.Name = "butDivision";
             butDivision.Size = new Size(109, 68);
             butDivision.TabIndex = 5;
-            butDivision.Text = "%";
+            butDivision.Text = "/";
             butDivision.UseVisualStyleBackColor = true;
+            butDivision.UseWaitCursor = true;
             butDivision.Click += OperatorButton_Click;
             // 
             // butSeven
@@ -124,6 +130,7 @@
             butSeven.TabIndex = 6;
             butSeven.Text = "7";
             butSeven.UseVisualStyleBackColor = true;
+            butSeven.UseWaitCursor = true;
             butSeven.Click += NumberButton_Click;
             // 
             // butEight
@@ -135,6 +142,7 @@
             butEight.TabIndex = 7;
             butEight.Text = "8";
             butEight.UseVisualStyleBackColor = true;
+            butEight.UseWaitCursor = true;
             butEight.Click += NumberButton_Click;
             // 
             // butNine
@@ -146,6 +154,7 @@
             butNine.TabIndex = 8;
             butNine.Text = "9";
             butNine.UseVisualStyleBackColor = true;
+            butNine.UseWaitCursor = true;
             butNine.Click += NumberButton_Click;
             // 
             // butMultip
@@ -155,8 +164,9 @@
             butMultip.Name = "butMultip";
             butMultip.Size = new Size(109, 68);
             butMultip.TabIndex = 9;
-            butMultip.Text = "x";
+            butMultip.Text = "*";
             butMultip.UseVisualStyleBackColor = true;
+            butMultip.UseWaitCursor = true;
             butMultip.Click += OperatorButton_Click;
             // 
             // butFour
@@ -168,6 +178,7 @@
             butFour.TabIndex = 10;
             butFour.Text = "4";
             butFour.UseVisualStyleBackColor = true;
+            butFour.UseWaitCursor = true;
             butFour.Click += NumberButton_Click;
             // 
             // butFive
@@ -179,6 +190,7 @@
             butFive.TabIndex = 11;
             butFive.Text = "5";
             butFive.UseVisualStyleBackColor = true;
+            butFive.UseWaitCursor = true;
             butFive.Click += NumberButton_Click;
             // 
             // butSix
@@ -190,6 +202,7 @@
             butSix.TabIndex = 12;
             butSix.Text = "6";
             butSix.UseVisualStyleBackColor = true;
+            butSix.UseWaitCursor = true;
             butSix.Click += NumberButton_Click;
             // 
             // butMin
@@ -201,6 +214,7 @@
             butMin.TabIndex = 13;
             butMin.Text = "-";
             butMin.UseVisualStyleBackColor = true;
+            butMin.UseWaitCursor = true;
             butMin.Click += OperatorButton_Click;
             // 
             // butOne
@@ -212,6 +226,7 @@
             butOne.TabIndex = 14;
             butOne.Text = "1";
             butOne.UseVisualStyleBackColor = true;
+            butOne.UseWaitCursor = true;
             butOne.Click += NumberButton_Click;
             // 
             // butTwo
@@ -223,6 +238,7 @@
             butTwo.TabIndex = 15;
             butTwo.Text = "2";
             butTwo.UseVisualStyleBackColor = true;
+            butTwo.UseWaitCursor = true;
             butTwo.Click += NumberButton_Click;
             // 
             // butThree
@@ -234,6 +250,7 @@
             butThree.TabIndex = 16;
             butThree.Text = "3";
             butThree.UseVisualStyleBackColor = true;
+            butThree.UseWaitCursor = true;
             butThree.Click += NumberButton_Click;
             // 
             // butPlus
@@ -245,6 +262,7 @@
             butPlus.TabIndex = 17;
             butPlus.Text = "+";
             butPlus.UseVisualStyleBackColor = true;
+            butPlus.UseWaitCursor = true;
             butPlus.Click += OperatorButton_Click;
             // 
             // butPlMi
@@ -256,6 +274,7 @@
             butPlMi.TabIndex = 18;
             butPlMi.Text = "+/-";
             butPlMi.UseVisualStyleBackColor = true;
+            butPlMi.UseWaitCursor = true;
             butPlMi.Click += butPlMi_Click;
             // 
             // butZero
@@ -267,6 +286,7 @@
             butZero.TabIndex = 19;
             butZero.Text = "0";
             butZero.UseVisualStyleBackColor = true;
+            butZero.UseWaitCursor = true;
             butZero.Click += NumberButton_Click;
             // 
             // butDot
@@ -278,6 +298,7 @@
             butDot.TabIndex = 20;
             butDot.Text = ".";
             butDot.UseVisualStyleBackColor = true;
+            butDot.UseWaitCursor = true;
             butDot.Click += Dot_Click;
             // 
             // butEqual
@@ -289,6 +310,7 @@
             butEqual.TabIndex = 21;
             butEqual.Text = "=";
             butEqual.UseVisualStyleBackColor = true;
+            butEqual.UseWaitCursor = true;
             butEqual.Click += butEqual_Click;
             // 
             // txtTitle
@@ -299,6 +321,7 @@
             txtTitle.Size = new Size(483, 86);
             txtTitle.TabIndex = 22;
             txtTitle.Text = "Simple Calculator";
+            txtTitle.UseWaitCursor = true;
             // 
             // Form1
             // 

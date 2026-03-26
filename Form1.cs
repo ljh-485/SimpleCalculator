@@ -41,11 +41,11 @@ namespace SimpleCalculator
             {
                 int i = expression.Length - 1;
                 // skip trailing operators if any
-                while (i >= 0 && "+-x%/÷".Contains(expression[i])) i--;
+                while (i >= 0 && "+-x×%/÷".Contains(expression[i])) i--;
                 // now i is at the end of the last operand (or -1)
                 int end = i;
                 // move to the start of that operand
-                while (i >= 0 && !"+-x%/÷".Contains(expression[i])) i--;
+                while (i >= 0 && !"+-x×%/÷".Contains(expression[i])) i--;
                 int start = i + 1;
                 if (end >= start)
                 {
@@ -195,7 +195,7 @@ namespace SimpleCalculator
                 if (!string.IsNullOrEmpty(expression))
                 {
                     char last = expression[expression.Length - 1];
-                    if ("+-x%/÷".Contains(last))
+                    if ("+-x×%/÷".Contains(last))
                     {
                         expression = expression.Substring(0, expression.Length - 1) + op;
                     }
@@ -216,12 +216,27 @@ namespace SimpleCalculator
             try
             {
                 if (string.IsNullOrEmpty(expression)) return;
-                // prepare expression for DataTable.Compute: replace 'x' with '*', '%' and '÷' to '/'
-                string eval = expression.Replace("x", "*").Replace("%", "/").Replace("÷", "/");
+                // prepare expression for DataTable.Compute: replace multiplication/division symbols with evaluable ones
+                string eval = expression.Replace("x", "*").Replace("×", "*").Replace("%", "/").Replace("÷", "/");
+
+                // check for direct division by zero occurrences like "/0" or "÷0" (simple literal check)
+                var divZeroPattern = new System.Text.RegularExpressions.Regex(@"(\/|÷)\s*\(?\s*[-+]?\s*0+(\.0+)?\s*\)?");
+                if (divZeroPattern.IsMatch(expression) || divZeroPattern.IsMatch(eval))
+                {
+                    MessageBox.Show("0으로 나눌 수 없습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 var dt = new System.Data.DataTable();
                 var val = dt.Compute(eval, string.Empty);
-                txtRssult.Text = val.ToString();
-                // keep txtInsert showing the original input expression
+                string resultStr = Convert.ToString(val, System.Globalization.CultureInfo.InvariantCulture);
+                txtRssult.Text = resultStr;
+                // show full expression with result in the input display
+                string original = expression;
+                txtInsert.Text = original + " = " + resultStr;
+                // update internal state so further operations start from the result
+                expression = resultStr;
+                currentOperand = resultStr;
             }
             catch
             {

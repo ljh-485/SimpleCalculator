@@ -175,20 +175,39 @@ namespace SimpleCalculator
         private void butPlMi_Click(object sender, EventArgs e)
         {
             // toggle sign of current operand
-            if (string.IsNullOrEmpty(currentOperand)) return;
-            int start = expression.Length - currentOperand.Length;
-            if (currentOperand.StartsWith("-"))
+            if (!string.IsNullOrEmpty(currentOperand))
             {
-                // remove leading -
-                currentOperand = currentOperand.Substring(1);
+                int start = expression.Length - currentOperand.Length;
+                if (currentOperand.StartsWith("-"))
+                {
+                    // remove leading -
+                    currentOperand = currentOperand.Substring(1);
+                }
+                else
+                {
+                    currentOperand = "-" + currentOperand;
+                }
+                expression = expression.Substring(0, start) + currentOperand;
+                txtInsert.Text = expression;
+                txtRssult.Text = currentOperand;
+                return;
             }
-            else
+
+            // If no current operand but a result is displayed, replace the result with its toggled sign
+            // and clear the input expression (user wants txtInsert cleared after toggling result)
+            if (!string.IsNullOrEmpty(txtRssult.Text))
             {
-                currentOperand = "-" + currentOperand;
+                if (double.TryParse(txtRssult.Text, out double res))
+                {
+                    res = -res;
+                    string newOperand = res.ToString();
+                    // use the toggled result as the starting operand for new calculations
+                    expression = newOperand;
+                    currentOperand = newOperand;
+                    txtInsert.Text = expression;
+                    txtRssult.Text = currentOperand;
+                }
             }
-            expression = expression.Substring(0, start) + currentOperand;
-            txtInsert.Text = expression;
-            txtRssult.Text = currentOperand;
         }
 
         private void Form1_Load(object sender, EventArgs e)

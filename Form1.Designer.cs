@@ -50,9 +50,9 @@
             butZero = new Button();
             butDot = new Button();
             butEqual = new Button();
-            txtTitle = new TextBox();
             butPi = new Button();
             butLog = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // txtInsert
@@ -315,21 +315,10 @@
             butEqual.UseWaitCursor = true;
             butEqual.Click += butEqual_Click;
             // 
-            // txtTitle
-            // 
-            txtTitle.Font = new Font("맑은 고딕", 22.125F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            txtTitle.ForeColor = Color.RoyalBlue;
-            txtTitle.Location = new Point(110, 21);
-            txtTitle.Name = "txtTitle";
-            txtTitle.Size = new Size(483, 86);
-            txtTitle.TabIndex = 22;
-            txtTitle.Text = "Simple Calculator";
-            txtTitle.UseWaitCursor = true;
-            // 
             // butPi
             // 
             butPi.Font = new Font("맑은 고딕", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            butPi.Location = new Point(12, 434);
+            butPi.Location = new Point(13, 345);
             butPi.Name = "butPi";
             butPi.Size = new Size(87, 68);
             butPi.TabIndex = 23;
@@ -340,36 +329,35 @@
             // 
             // butLog
             // 
-            butLog = new Button();
-            butLog.Font = new Font("맑은 고딕", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            butLog.Location = new Point(12, 529);
-            butLog.Name = "butLog";
-            butLog.Size = new Size(87, 68);
-            butLog.TabIndex = 24;
-            butLog.Text = "log";
-            butLog.UseVisualStyleBackColor = true;
-            butLog.UseWaitCursor = true;
-            butLog.Click += butLog_Click;
-            // 
-            // butLog
-            // 
             butLog.Font = new Font("맑은 고딕", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            butLog.Location = new Point(13, 529);
+            butLog.Location = new Point(13, 438);
             butLog.Name = "butLog";
             butLog.Size = new Size(87, 68);
             butLog.TabIndex = 25;
             butLog.Text = "log";
             butLog.UseVisualStyleBackColor = true;
             butLog.UseWaitCursor = true;
+            butLog.Click += butLog_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("맑은 고딕", 24F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label1.ForeColor = Color.RoyalBlue;
+            label1.Location = new Point(83, 39);
+            label1.Name = "label1";
+            label1.Size = new Size(544, 86);
+            label1.TabIndex = 26;
+            label1.Text = "Simple Calculator";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(778, 836);
+            Controls.Add(label1);
             Controls.Add(butLog);
             Controls.Add(butPi);
-            Controls.Add(txtTitle);
             Controls.Add(butEqual);
             Controls.Add(butDot);
             Controls.Add(butZero);
@@ -424,8 +412,8 @@
         private Button butZero;
         private Button butDot;
         private Button butEqual;
-        private TextBox txtTitle;
         private Button butPi;
         private Button butLog;
+        private Label label1;
     }
 }
